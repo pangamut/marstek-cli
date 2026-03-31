@@ -139,17 +139,6 @@ Available at: `https://static-eu.marstekenergy.com/ems/resource/agreement/Marste
 | `Led.Ctrl` | Write | LED panel on/off |
 | `Ble.Adv` | Write | Bluetooth broadcasting on/off |
 
-## Home Assistant integration
-
-The `Passive` mode is designed for external control — ideal for zero-feed-in regulation from Home Assistant via a Shelly Pro 3EM:
-
-```
-Shelly Pro 3EM  →  HA reads grid power every 1s
-                →  HA automation calculates target discharge power
-                →  UDP Passive command sent to Marstek every 5–10s
-```
-
-A Home Assistant automation blueprint for this use case is planned.
 
 ## Notes
 

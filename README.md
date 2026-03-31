@@ -23,6 +23,8 @@ curl -O https://raw.githubusercontent.com/pangamut/marstek-cli/main/marstek_cli.
 chmod +x marstek_cli.py
 ```
 
+A German localisation is also available as `marstek_cli_de.py`.
+
 ## Usage
 
 ### Auto-Discovery

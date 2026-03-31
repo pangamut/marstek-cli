@@ -82,7 +82,7 @@ Marstek CLI  •  Auto-Discovery  •  07:38:57
   Suche nach Marstek-Geräten im LAN …
   1 Gerät(e) gefunden:
 
-  [1]  VenusE 3.0      IP: 10.1.5.60         FW: 144  MAC: 60b58d8601bd
+  [1]  VenusE 3.0      IP: 10.1.5.60         FW: 144  MAC: 60b49d8601af
 
   → VenusE 3.0 @ 10.1.5.60
 

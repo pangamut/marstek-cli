@@ -44,7 +44,7 @@ REQUEST_ID   = 1
 # The Venus E firmware enforces a ~3.3 s rate-limit between UDP responses.
 # Without a delay between back-to-back section queries the second call always
 # arrives within that window and times out. 3.5 s clears it safely.
-INTER_QUERY_DELAY = 3.5
+INTER_QUERY_DELAY = 4.0
 
 
 # ─── i18n ─────────────────────────────────────────────────────────────────────

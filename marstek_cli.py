@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-marstek_cli.py — Marstek Venus E/C Open API CLI  (Rev 2.0)
+marstek_cli_en.py — Marstek Venus E/C Open API CLI  (Rev 2.0)
 
 Read commands (--query):
     device  Device info (model, firmware, MACs)
@@ -19,8 +19,8 @@ Set commands:
     --set-ble  on|off               Bluetooth broadcasting on/off
 
 Discovery:
-    python marstek_cli.py        Auto-discover all Marstek devices in LAN
-    python marstek_cli.py <ip>   Connect directly to known IP
+    python marstek_cli_en.py        Auto-discover all Marstek devices in LAN
+    python marstek_cli_en.py <ip>   Connect directly to known IP
 """
 
 import argparse

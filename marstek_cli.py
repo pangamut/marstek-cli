@@ -19,8 +19,8 @@ Set commands:
     --set-ble  on|off               Bluetooth broadcasting on/off
 
 Discovery:
-    python marstek_cli_en.py        Auto-discover all Marstek devices in LAN
-    python marstek_cli_en.py <ip>   Connect directly to known IP
+    python marstek_cli.py        Auto-discover all Marstek devices in LAN
+    python marstek_cli.py <ip>   Connect directly to known IP
 """
 
 import argparse

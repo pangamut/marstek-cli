@@ -1,0 +1,1940 @@
+  "meta": {
+    "tool": "marstek_api_check",
+    "device_ip": "10.1.5.2",
+    "port": 30000,
+    "rounds": 10,
+    "delay_s": 4.0,
+    "stress": false,
+    "timestamp": "2026-04-02T09:28:32.381662"
+  },
+  "summary": {
+    "GetDevice": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 13.18,
+      "rtt_max_ms": 104.1,
+      "rtt_avg_ms": 79.25,
+      "rtt_stdev_ms": 35.77,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    "Wifi.GetStatus": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 17.48,
+      "rtt_max_ms": 102.29,
+      "rtt_avg_ms": 91.0,
+      "rtt_stdev_ms": 25.91,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    "BLE.GetStatus": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 10.04,
+      "rtt_max_ms": 100.53,
+      "rtt_avg_ms": 88.28,
+      "rtt_stdev_ms": 27.53,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    "Bat.GetStatus": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 9.43,
+      "rtt_max_ms": 101.43,
+      "rtt_avg_ms": 73.53,
+      "rtt_stdev_ms": 42.69,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    "ES.GetStatus": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 12.2,
+      "rtt_max_ms": 1001.3,
+      "rtt_avg_ms": 181.17,
+      "rtt_stdev_ms": 289.5,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    "ES.GetMode": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 13.39,
+      "rtt_max_ms": 101.14,
+      "rtt_avg_ms": 81.69,
+      "rtt_stdev_ms": 35.31,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    "EM.GetStatus": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 18.42,
+      "rtt_max_ms": 104.27,
+      "rtt_avg_ms": 90.68,
+      "rtt_stdev_ms": 25.53,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    "INVALID.Command": {
+      "total": 10,
+      "ok": 10,
+      "timeout": 0,
+      "error": 0,
+      "success_rate": "100%",
+      "rtt_min_ms": 78.47,
+      "rtt_max_ms": 101.14,
+      "rtt_avg_ms": 96.29,
+      "rtt_stdev_ms": 6.58,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    }
+  },
+  "records": [
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:23:36.275141",
+      "rtt_ms": 70.58,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:23:40.350903",
+      "rtt_ms": 96.91,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:23:44.449159",
+      "rtt_ms": 100.85,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:23:48.555644",
+      "rtt_ms": 13.18,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:23:52.574169",
+      "rtt_ms": 97.12,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:23:56.676892",
+      "rtt_ms": 104.1,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:24:00.783448",
+      "rtt_ms": 99.86,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:24:04.888814",
+      "rtt_ms": 96.54,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:24:08.990893",
+      "rtt_ms": 99.24,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "GetDevice",
+      "method": "Marstek.GetDevice",
+      "timestamp": "2026-04-02T09:24:13.093100",
+      "rtt_ms": 14.17,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Marstek.GetDevice\", \"params\": {\"ble_mac\": \"0\"}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"device\":\t\"VenusE 3.0\",\n\t\t\"ver\":\t144,\n\t\t\"ble_mac\":\t\"0c587b17df4f\",\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"wifi_name\":\t\"z80\",\n\t\t\"ip\":\t\"10.01.05.02\"\n\t}\n}",
+      "result": {
+        "device": "VenusE 3.0",
+        "ver": 144,
+        "ble_mac": "0c587b17df4f",
+        "wifi_mac": "60b58d8601bd",
+        "wifi_name": "z80",
+        "ip": "10.01.05.02"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:13.107795",
+      "rtt_ms": 102.29,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-58,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -58,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:17.214431",
+      "rtt_ms": 17.48,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-57,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -57,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:21.233350",
+      "rtt_ms": 100.6,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-57,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -57,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:25.334905",
+      "rtt_ms": 101.22,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-57,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -57,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:29.438630",
+      "rtt_ms": 99.5,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-58,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -58,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:33.543643",
+      "rtt_ms": 96.43,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-58,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -58,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:37.645548",
+      "rtt_ms": 96.58,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-58,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -58,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:41.747602",
+      "rtt_ms": 96.8,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-58,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -58,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:45.846936",
+      "rtt_ms": 99.55,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-58,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -58,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "Wifi.GetStatus",
+      "method": "Wifi.GetStatus",
+      "timestamp": "2026-04-02T09:24:49.948800",
+      "rtt_ms": 99.55,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Wifi.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"wifi_mac\":\t\"60b58d8601bd\",\n\t\t\"ssid\":\t\"z80\",\n\t\t\"rssi\":\t-58,\n\t\t\"sta_ip\":\t\"10.01.05.02\",\n\t\t\"sta_gate\":\t\"10.01.01.01\",\n\t\t\"sta_mask\":\t\"255.255.240.00\",\n\t\t\"sta_dns\":\t\"10.01.01.54\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "wifi_mac": "60b58d8601bd",
+        "ssid": "z80",
+        "rssi": -58,
+        "sta_ip": "10.01.05.02",
+        "sta_gate": "10.01.01.01",
+        "sta_mask": "255.255.240.00",
+        "sta_dns": "10.01.01.54"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [
+        "wifi_mac = '60b58d8601bd'"
+      ],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:24:50.048628",
+      "rtt_ms": 100.53,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:24:54.153265",
+      "rtt_ms": 96.96,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:24:58.253492",
+      "rtt_ms": 97.78,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:25:02.354243",
+      "rtt_ms": 98.05,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:25:06.457806",
+      "rtt_ms": 95.84,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:25:10.559209",
+      "rtt_ms": 96.26,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:25:14.656523",
+      "rtt_ms": 10.04,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:25:18.671364",
+      "rtt_ms": 96.01,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:25:22.772839",
+      "rtt_ms": 96.06,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "BLE.GetStatus",
+      "method": "BLE.GetStatus",
+      "timestamp": "2026-04-02T09:25:26.874394",
+      "rtt_ms": 95.32,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"BLE.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"state\":\t\"connect\",\n\t\t\"ble_mac\":\t\"0c587b17df4f\"\n\t}\n}",
+      "result": {
+        "id": 0,
+        "state": "connect",
+        "ble_mac": "0c587b17df4f"
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:26.970194",
+      "rtt_ms": 101.35,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:31.076967",
+      "rtt_ms": 16.28,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:35.094018",
+      "rtt_ms": 101.43,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:39.197728",
+      "rtt_ms": 99.73,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:43.302046",
+      "rtt_ms": 97.47,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:47.400433",
+      "rtt_ms": 100.87,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:51.503553",
+      "rtt_ms": 100.0,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:55.606328",
+      "rtt_ms": 99.23,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:25:59.711043",
+      "rtt_ms": 9.43,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "Bat.GetStatus",
+      "method": "Bat.GetStatus",
+      "timestamp": "2026-04-02T09:26:03.723993",
+      "rtt_ms": 9.55,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"Bat.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"soc\":\t31,\n\t\t\"charg_flag\":\ttrue,\n\t\t\"dischrg_flag\":\ttrue,\n\t\t\"bat_temp\":\t20.0,\n\t\t\"bat_capacity\":\t1617.0,\n\t\t\"rated_capacity\":\t5120.0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "soc": 31,
+        "charg_flag": true,
+        "dischrg_flag": true,
+        "bat_temp": 20.0,
+        "bat_capacity": 1617.0,
+        "rated_capacity": 5120.0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:03.733940",
+      "rtt_ms": 102.57,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-38,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -38,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:07.838170",
+      "rtt_ms": 1001.3,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-95,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -95,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:12.844999",
+      "rtt_ms": 107.24,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-66,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -66,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:16.957740",
+      "rtt_ms": 96.52,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-91,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -91,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:21.058359",
+      "rtt_ms": 12.2,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-112,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -112,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:25.075258",
+      "rtt_ms": 97.24,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-71,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -71,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:29.175503",
+      "rtt_ms": 98.94,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-111,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -111,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:33.279932",
+      "rtt_ms": 96.52,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-53,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -53,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:37.378696",
+      "rtt_ms": 101.86,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-10,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -10,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetStatus",
+      "method": "ES.GetStatus",
+      "timestamp": "2026-04-02T09:26:41.485496",
+      "rtt_ms": 97.27,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"bat_cap\":\t5120,\n\t\t\"pv_power\":\t0,\n\t\t\"ongrid_power\":\t-32,\n\t\t\"offgrid_power\":\t0,\n\t\t\"total_pv_energy\":\t0,\n\t\t\"total_grid_output_energy\":\t2204,\n\t\t\"total_grid_input_energy\":\t1787,\n\t\t\"total_load_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "bat_soc": 31,
+        "bat_cap": 5120,
+        "pv_power": 0,
+        "ongrid_power": -32,
+        "offgrid_power": 0,
+        "total_pv_energy": 0,
+        "total_grid_output_energy": 2204,
+        "total_grid_input_energy": 1787,
+        "total_load_energy": 0
+      },
+      "error": null,
+      "type_issues": [
+        "MISSING field: bat_power"
+      ],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:26:41.583358",
+      "rtt_ms": 101.14,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-32,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -32,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:26:45.686862",
+      "rtt_ms": 99.49,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-44,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -44,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:26:49.791854",
+      "rtt_ms": 98.71,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-53,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -53,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:26:53.896035",
+      "rtt_ms": 96.62,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-90,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -90,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:26:57.997830",
+      "rtt_ms": 96.82,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-51,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -51,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:27:02.098357",
+      "rtt_ms": 98.43,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-54,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -54,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:27:06.202281",
+      "rtt_ms": 96.44,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-38,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -38,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:27:10.303464",
+      "rtt_ms": 16.12,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-17,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -17,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:27:14.322328",
+      "rtt_ms": 13.39,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-42,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -42,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "ES.GetMode",
+      "method": "ES.GetMode",
+      "timestamp": "2026-04-02T09:27:18.339594",
+      "rtt_ms": 99.72,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"ES.GetMode\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"mode\":\t\"Auto\",\n\t\t\"ongrid_power\":\t-29,\n\t\t\"offgrid_power\":\t0,\n\t\t\"bat_soc\":\t31,\n\t\t\"ct_state\":\t0,\n\t\t\"a_power\":\t0,\n\t\t\"b_power\":\t0,\n\t\t\"c_power\":\t0,\n\t\t\"total_power\":\t0,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "mode": "Auto",
+        "ongrid_power": -29,
+        "offgrid_power": 0,
+        "bat_soc": 31,
+        "ct_state": 0,
+        "a_power": 0,
+        "b_power": 0,
+        "c_power": 0,
+        "total_power": 0,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:18.439873",
+      "rtt_ms": 100.94,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t190,\n\t\t\"b_power\":\t-235,\n\t\t\"c_power\":\t36,\n\t\t\"total_power\":\t-8,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 190,
+        "b_power": -235,
+        "c_power": 36,
+        "total_power": -8,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:22.544978",
+      "rtt_ms": 96.57,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t210,\n\t\t\"b_power\":\t-235,\n\t\t\"c_power\":\t36,\n\t\t\"total_power\":\t11,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 210,
+        "b_power": -235,
+        "c_power": 36,
+        "total_power": 11,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:26.647119",
+      "rtt_ms": 96.59,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t210,\n\t\t\"b_power\":\t-235,\n\t\t\"c_power\":\t38,\n\t\t\"total_power\":\t12,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 210,
+        "b_power": -235,
+        "c_power": 38,
+        "total_power": 12,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:30.747828",
+      "rtt_ms": 96.8,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t202,\n\t\t\"b_power\":\t-236,\n\t\t\"c_power\":\t39,\n\t\t\"total_power\":\t4,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 202,
+        "b_power": -236,
+        "c_power": 39,
+        "total_power": 4,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:34.848474",
+      "rtt_ms": 97.68,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t220,\n\t\t\"b_power\":\t-236,\n\t\t\"c_power\":\t37,\n\t\t\"total_power\":\t21,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 220,
+        "b_power": -236,
+        "c_power": 37,
+        "total_power": 21,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:38.951698",
+      "rtt_ms": 104.27,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t242,\n\t\t\"b_power\":\t-236,\n\t\t\"c_power\":\t38,\n\t\t\"total_power\":\t44,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 242,
+        "b_power": -236,
+        "c_power": 38,
+        "total_power": 44,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:43.061443",
+      "rtt_ms": 18.42,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t196,\n\t\t\"b_power\":\t-237,\n\t\t\"c_power\":\t38,\n\t\t\"total_power\":\t-2,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 196,
+        "b_power": -237,
+        "c_power": 38,
+        "total_power": -2,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:47.080872",
+      "rtt_ms": 101.06,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t212,\n\t\t\"b_power\":\t-235,\n\t\t\"c_power\":\t37,\n\t\t\"total_power\":\t14,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 212,
+        "b_power": -235,
+        "c_power": 37,
+        "total_power": 14,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:51.184317",
+      "rtt_ms": 98.82,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t190,\n\t\t\"b_power\":\t-236,\n\t\t\"c_power\":\t38,\n\t\t\"total_power\":\t-8,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 190,
+        "b_power": -236,
+        "c_power": 38,
+        "total_power": -8,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "EM.GetStatus",
+      "method": "EM.GetStatus",
+      "timestamp": "2026-04-02T09:27:55.288607",
+      "rtt_ms": 95.61,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"EM.GetStatus\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"result\":\t{\n\t\t\"id\":\t0,\n\t\t\"ct_state\":\t1,\n\t\t\"a_power\":\t159,\n\t\t\"b_power\":\t-236,\n\t\t\"c_power\":\t38,\n\t\t\"total_power\":\t-38,\n\t\t\"input_energy\":\t0,\n\t\t\"output_energy\":\t0\n\t}\n}",
+      "result": {
+        "id": 0,
+        "ct_state": 1,
+        "a_power": 159,
+        "b_power": -236,
+        "c_power": 38,
+        "total_power": -38,
+        "input_energy": 0,
+        "output_energy": 0
+      },
+      "error": null,
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:27:55.384635",
+      "rtt_ms": 101.14,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:27:59.491156",
+      "rtt_ms": 78.47,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:03.570598",
+      "rtt_ms": 100.22,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:07.676307",
+      "rtt_ms": 95.33,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:11.777931",
+      "rtt_ms": 95.86,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:15.875694",
+      "rtt_ms": 99.12,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:19.976150",
+      "rtt_ms": 99.93,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:24.079115",
+      "rtt_ms": 97.71,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:28.178671",
+      "rtt_ms": 99.18,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    },
+    {
+      "command": "INVALID.Command",
+      "method": "INVALID.Command",
+      "timestamp": "2026-04-02T09:28:32.283274",
+      "rtt_ms": 95.91,
+      "status": "ok",
+      "raw_request": "{\"id\": 1, \"method\": \"INVALID.Command\", \"params\": {\"id\": 0}}",
+      "raw_response": "{\n\t\"id\":\t1,\n\t\"src\":\t\"VenusE 3.0-0c587b17df4f\",\n\t\"error\":\t{\n\t\t\"code\":\t-32601,\n\t\t\"message\":\t\"Method not found\",\n\t\t\"data\":\t425\n\t}\n}",
+      "result": null,
+      "error": {
+        "code": -32601,
+        "message": "Method not found",
+        "data": 425
+      },
+      "type_issues": [],
+      "unknown_fields": [],
+      "notable_values": []
+    }
+  ]
+}

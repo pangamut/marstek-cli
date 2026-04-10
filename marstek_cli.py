@@ -122,6 +122,10 @@ LABELS = {
         "err_mode":    "Error: invalid mode '{}'. Valid: auto | ai | ups | passive",
         "err_power":   "Error: --power <W> is required for passive mode",
         "err_dod":     "Error: DOD must be between 30 and 88 (got: {})",
+        "err_dod_unsupported": (
+            "DOD.SET returned 'Method not found' — this command is not implemented "
+            "in the device firmware (Venus E FW 144). Use the Marstek app to change DOD."
+        ),
         "err_generic": "Error: {}",
         "not_supp":    "(not supported — {})",
         "confirm_mode":"⚠️  Change operating mode?",
@@ -142,11 +146,13 @@ LABELS = {
         "led_off":     "off",
         "ble_active":  "active",
         "ble_blocked": "blocked",
-        "sec_check":   "Quick Check",
-        "check_ok":    "✓ All checks passed",
-        "check_warn":  "⚠️  Warning:",
-        "check_err":   "✗ Error:",
-        "check_bat_missing": "bat_power missing (standby quirk)",
+        # quick check
+        "sec_check":        "Quick Check",
+        "check_ok":         "✓ All checks passed",
+        "check_warn":       "⚠️  {}",
+        "check_info":       "ℹ️  {}",
+        "check_rssi_low":   "WiFi RSSI low ({} dBm) — consider moving device closer to AP",
+        "check_bat_standby":"bat_power absent — battery is in standby (expected behaviour)",
     },
     "de": {
         "sec_device":  "Gerät — Marstek.GetDevice",
@@ -206,6 +212,10 @@ LABELS = {
         "err_mode":    "Fehler: Ungültiger Modus '{}'. Gültig: auto | ai | ups | passive",
         "err_power":   "Fehler: --power <W> ist für Passive-Modus erforderlich",
         "err_dod":     "Fehler: DOD muss zwischen 30 und 88 liegen (angegeben: {})",
+        "err_dod_unsupported": (
+            "DOD.SET meldet 'Method not found' — der Befehl ist in der Geräte-Firmware "
+            "nicht implementiert (Venus E FW 144). DOD bitte über die Marstek-App ändern."
+        ),
         "err_generic": "Fehler: {}",
         "not_supp":    "(nicht unterstützt — {})",
         "confirm_mode":"⚠️  Gerätemodus ändern?",
@@ -224,11 +234,12 @@ LABELS = {
         "led_off":     "aus",
         "ble_active":  "aktiv",
         "ble_blocked": "gesperrt",
-        "sec_check":   "Schnellcheck",
-        "check_ok":    "✓ Alle Checks bestanden",
-        "check_warn":  "⚠️  Warnung:",
-        "check_err":   "✗ Fehler:",
-        "check_bat_missing": "bat_power fehlt (Standby-Quirk)",
+        "sec_check":        "Schnellcheck",
+        "check_ok":         "✓ Alle Checks bestanden",
+        "check_warn":       "⚠️  {}",
+        "check_info":       "ℹ️  {}",
+        "check_rssi_low":   "WiFi-Signal schwach ({} dBm) — Gerät näher am Access Point platzieren",
+        "check_bat_standby":"bat_power nicht vorhanden — Batterie im Standby (erwartetes Verhalten)",
     },
 }
 
@@ -260,6 +271,14 @@ def safe_json(data: bytes) -> dict:
 
 def confirm(key: str) -> bool:
     return input(f"{t(key)} [y/N]: ").strip().lower() == "y"
+
+
+def is_method_not_found(r: dict) -> bool:
+    """True when the device returned JSON-RPC -32601 Method not found."""
+    err = r.get("error")
+    if isinstance(err, dict):
+        return err.get("code") == -32601
+    return False
 
 
 # ─── Transport ────────────────────────────────────────────────────────────────
@@ -426,48 +445,47 @@ def scale_energy(raw, scale=1.0):
     return round(raw * scale, 1) if raw is not None else None
 
 
+# ─── Quick check ──────────────────────────────────────────────────────────────
+
 def quick_check(ip, port):
-    """Quick API health check — warnings only."""
+    """Quick API health check — actionable warnings only."""
+    warnings = []
+    infos    = []
+
+    r_es   = query(ip, port, "ES.GetStatus")
+    r_wifi = query(ip, port, "Wifi.GetStatus")
+
+    # bat_power absent = standby, not a problem — report as info only
+    if "error" not in r_es and r_es.get("bat_power") is None:
+        infos.append(t("check_bat_standby"))
+
+    # Low RSSI is actionable
+    if "error" not in r_wifi:
+        rssi = r_wifi.get("rssi")
+        if rssi is not None and rssi < -80:
+            warnings.append(t("check_rssi_low", rssi))
+
     if _json_mode:
-        warnings = []
-        r = query(ip, port, "ES.GetStatus")
-        if "error" not in r and r.get("bat_power") is None:
-            warnings.append("bat_power missing (standby quirk)")
-        r = query(ip, port, "Wifi.GetStatus")
-        if "error" not in r:
-            rssi = r.get("rssi")
-            if rssi is not None and rssi < -80:
-                warnings.append(f"WiFi RSSI low ({rssi} dBm)")
-        output = {
+        print(json.dumps({
             "timestamp": datetime.now().isoformat(),
             "device_ip": ip,
-            "port": port,
-            "health": "ok" if not warnings else "warning",
-            "warnings": warnings,
-        }
-        print(json.dumps(output, indent=2))
+            "port":      port,
+            "health":    "warning" if warnings else "ok",
+            "warnings":  warnings,
+            "info":      infos,
+        }, indent=2))
         return
-    
-    print(f"\n{'─' * 56}")
-    print(f"  {t('sec_check')}")
-    print(f"{'─' * 56}\n")
-    
-    warnings = []
-    r = query(ip, port, "ES.GetStatus")
-    if "error" not in r and r.get("bat_power") is None:
-        warnings.append("ES.GetStatus: bat_power fehlt (Standby-Quirk)")
-    r = query(ip, port, "Wifi.GetStatus")
-    if "error" not in r:
-        rssi = r.get("rssi")
-        if rssi is not None and rssi < -80:
-            warnings.append(f"WiFi RSSI ist schwach ({rssi} dBm)")
-    
-    if not warnings:
-        print(f"  {t('check_ok')}")
+
+    section(t("sec_check"))
+    if not warnings and not infos:
+        print(f"\n  {t('check_ok')}")
     else:
         for w in warnings:
-            print(f"  {t('check_warn')} {w}")
+            print(f"\n  {t('check_warn', w)}")
+        for i in infos:
+            print(f"\n  {t('check_info', i)}")
     print()
+
 
 # ─── Read queries ─────────────────────────────────────────────────────────────
 
@@ -700,6 +718,9 @@ def set_dod(ip, port, value: int):
         return
     section(t("sec_dod", value))
     r = query(ip, port, "DOD.SET", {"value": value})
+    if "error" in r and is_method_not_found(r):
+        print(f"\n  {t('err_dod_unsupported')}")
+        return
     if not ok_result(r): return
     print(fmt(t("result"), t("success") if to_bool(r.get("set_result")) else t("failed")))
 
@@ -744,7 +765,7 @@ def main():
     parser.add_argument("--json", action="store_true", dest="json_out",
                         help="Machine-readable JSON output")
     parser.add_argument("--check", action="store_true", dest="quick_check",
-                        help="Quick API health check (warnings only)")
+                        help="Quick API health check")
     parser.add_argument("--set-mode", metavar="MODE",
                         help="Mode: auto | ai | ups | passive  (passive requires --power)")
     parser.add_argument("--power", type=int, metavar="W",
@@ -761,7 +782,7 @@ def main():
 
     args = parser.parse_args()
 
-    _lang      = "de" if args.de else "en"  # English is default
+    _lang      = "de" if args.de else "en"
     _json_mode = args.json_out
 
     # ── Auto-Discovery ────────────────────────────────────────────────────────
@@ -788,7 +809,7 @@ def main():
             chosen = devices[0]
         else:
             if _json_mode:
-                chosen = devices[0]  # non-interactive: pick first
+                chosen = devices[0]
             else:
                 try:
                     idx    = int(input(f"  {t('disc_select')}").strip() or "1") - 1
@@ -807,7 +828,6 @@ def main():
               f"{datetime.now().strftime('%H:%M:%S')}  •  Rev 2.0")
 
     # ── Dispatch ──────────────────────────────────────────────────────────────
-    checked = False
     if args.set_mode:
         set_mode(ip, args.port, args.set_mode, args.power)
     elif args.set_dod is not None:
@@ -818,10 +838,16 @@ def main():
         set_ble(ip, args.port, args.set_ble)
     elif args.quick_check:
         quick_check(ip, args.port)
-        checked = True
     elif args.query:
-        checked = True  # query mode also sets data directly
         QUERIES[args.query](ip, args.port)
+        # flush JSON for single-section queries
+        if _json_mode:
+            print(json.dumps({
+                "timestamp": datetime.now().isoformat(),
+                "device_ip": ip,
+                "port":      args.port,
+                "data":      _json_output,
+            }, indent=2))
     else:
         # Determine inter-query delay (priority: --delay > FORCE_DELAY > auto-detect)
         if args.delay is not None:
@@ -848,16 +874,16 @@ def main():
             if inter_delay and i < len(fns) - 1:
                 time.sleep(inter_delay)
 
-    # ── JSON flush ────────────────────────────────────────────────────────────
-    if _json_mode and not checked:
-        output = {
-            "timestamp": datetime.now().isoformat(),
-            "device_ip": ip,
-            "port": args.port,
-            "data": _json_output,
-        }
-        print(json.dumps(output, indent=2))
-    else:
+        # flush JSON for full readout
+        if _json_mode:
+            print(json.dumps({
+                "timestamp": datetime.now().isoformat(),
+                "device_ip": ip,
+                "port":      args.port,
+                "data":      _json_output,
+            }, indent=2))
+
+    if not _json_mode:
         print()
 
 

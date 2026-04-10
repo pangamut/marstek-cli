@@ -142,6 +142,11 @@ LABELS = {
         "led_off":     "off",
         "ble_active":  "active",
         "ble_blocked": "blocked",
+        "sec_check":   "Quick Check",
+        "check_ok":    "✓ All checks passed",
+        "check_warn":  "⚠️  Warning:",
+        "check_err":   "✗ Error:",
+        "check_bat_missing": "bat_power missing (standby quirk)",
     },
     "de": {
         "sec_device":  "Gerät — Marstek.GetDevice",
@@ -219,6 +224,11 @@ LABELS = {
         "led_off":     "aus",
         "ble_active":  "aktiv",
         "ble_blocked": "gesperrt",
+        "sec_check":   "Schnellcheck",
+        "check_ok":    "✓ Alle Checks bestanden",
+        "check_warn":  "⚠️  Warnung:",
+        "check_err":   "✗ Fehler:",
+        "check_bat_missing": "bat_power fehlt (Standby-Quirk)",
     },
 }
 
@@ -415,6 +425,49 @@ def json_collect(section_key: str, data: dict):
 def scale_energy(raw, scale=1.0):
     return round(raw * scale, 1) if raw is not None else None
 
+
+def quick_check(ip, port):
+    """Quick API health check — warnings only."""
+    if _json_mode:
+        warnings = []
+        r = query(ip, port, "ES.GetStatus")
+        if "error" not in r and r.get("bat_power") is None:
+            warnings.append("bat_power missing (standby quirk)")
+        r = query(ip, port, "Wifi.GetStatus")
+        if "error" not in r:
+            rssi = r.get("rssi")
+            if rssi is not None and rssi < -80:
+                warnings.append(f"WiFi RSSI low ({rssi} dBm)")
+        output = {
+            "timestamp": datetime.now().isoformat(),
+            "device_ip": ip,
+            "port": port,
+            "health": "ok" if not warnings else "warning",
+            "warnings": warnings,
+        }
+        print(json.dumps(output, indent=2))
+        return
+    
+    print(f"\n{'─' * 56}")
+    print(f"  {t('sec_check')}")
+    print(f"{'─' * 56}\n")
+    
+    warnings = []
+    r = query(ip, port, "ES.GetStatus")
+    if "error" not in r and r.get("bat_power") is None:
+        warnings.append("ES.GetStatus: bat_power fehlt (Standby-Quirk)")
+    r = query(ip, port, "Wifi.GetStatus")
+    if "error" not in r:
+        rssi = r.get("rssi")
+        if rssi is not None and rssi < -80:
+            warnings.append(f"WiFi RSSI ist schwach ({rssi} dBm)")
+    
+    if not warnings:
+        print(f"  {t('check_ok')}")
+    else:
+        for w in warnings:
+            print(f"  {t('check_warn')} {w}")
+    print()
 
 # ─── Read queries ─────────────────────────────────────────────────────────────
 
@@ -690,6 +743,8 @@ def main():
                         help="German output labels")
     parser.add_argument("--json", action="store_true", dest="json_out",
                         help="Machine-readable JSON output")
+    parser.add_argument("--check", action="store_true", dest="quick_check",
+                        help="Quick API health check (warnings only)")
     parser.add_argument("--set-mode", metavar="MODE",
                         help="Mode: auto | ai | ups | passive  (passive requires --power)")
     parser.add_argument("--power", type=int, metavar="W",
@@ -752,6 +807,7 @@ def main():
               f"{datetime.now().strftime('%H:%M:%S')}  •  Rev 2.0")
 
     # ── Dispatch ──────────────────────────────────────────────────────────────
+    checked = False
     if args.set_mode:
         set_mode(ip, args.port, args.set_mode, args.power)
     elif args.set_dod is not None:
@@ -760,7 +816,11 @@ def main():
         set_led(ip, args.port, args.set_led)
     elif args.set_ble:
         set_ble(ip, args.port, args.set_ble)
+    elif args.quick_check:
+        quick_check(ip, args.port)
+        checked = True
     elif args.query:
+        checked = True  # query mode also sets data directly
         QUERIES[args.query](ip, args.port)
     else:
         # Determine inter-query delay (priority: --delay > FORCE_DELAY > auto-detect)
@@ -789,7 +849,7 @@ def main():
                 time.sleep(inter_delay)
 
     # ── JSON flush ────────────────────────────────────────────────────────────
-    if _json_mode:
+    if _json_mode and not checked:
         output = {
             "timestamp": datetime.now().isoformat(),
             "device_ip": ip,
